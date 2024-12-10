@@ -1,52 +1,98 @@
+# Kubernetes Security and CKS Content
+
+## 1. CKS Content
 ```mermaid
 graph TD
-    A[CKS Content] --> A1[Cluster Setup - 10%]
+    A[CKS Content]
+    A --> A1[Cluster Setup - 10%]
     A --> A2[Cluster Hardening - 15%]
     A --> A3[System Hardening - 15%]
     A --> A4[Minimize Microservices Vulnerabilities - 20%]
     A --> A5[Supply Chain Security - 20%]
-    A --> A6[Monitoring, Logging, and Runtime Security - 20%]
+    A --> A6[Monitoring, Logging & Runtime Security - 20%]
+```
 
+---
+
+## 2. Kubernetes Security Best Practices
+```mermaid
+graph TD
     B[Kubernetes Security Best Practices]
     B --> B1[Security Principles]
     B --> B2[Kubernetes Security Categories]
-    B --> B3[Kubernetes Best Practices]
+    B --> B3[Best Practices]
+```
 
-    B1 --> B1a[Defence in Depth: Multi-layer security]
-    B1 --> B1b[Least Privilege: Least functional privilege for identities]
-    B1 --> B1c[Limit Attack Surface: Remove unnecessary packages and apps]
+---
 
-    B2 --> B2a[Host Operating System]
-    B2 --> B2b[Kubernetes Cluster Security]
-    B2 --> B2c[Application Security]
+## 3. Security Principles
+```mermaid
+graph TD
+    P[Security Principles]
+    P --> P1[Defence in Depth]
+    P --> P2[Least Privilege]
+    P --> P3[Limit Attack Surface]
+```
 
-    B3 --> B3a[Host Operating System Best Practices]
-    B3a --> B3a1[K8s nodes should only run Kubernetes]
-    B3a --> B3a2[Remove unused apps]
-    B3a --> B3a3[Keep everything up to date]
-    B3a --> B3a4[Use runtime security tools like gVisor, seccomp]
-    B3a --> B3a5[Find and identify malicious processes]
-    B3a --> B3a6[Restrict IAM/SSH access]
+---
 
-    B3 --> B3b[Kubernetes Cluster Security Best Practices]
-    B3b --> B3b1[Keep components secure and up-to-date]
-    B3b --> B3b2[Restrict external access]
-    B3b --> B3b3[Authentication, Authorization, Admission Controllers]
-    B3b --> B3b4[Admission Controller Policies: Node Restriction, OPA]
-    B3b --> B3b5[Audit Logging, Apply CIS Benchmarks]
-    B3b --> B3b6[Etcd Security: Encrypt data, restrict access, encrypt traffic]
+## 4. Kubernetes Security Categories
+```mermaid
+graph TD
+    C[Kubernetes Security Categories]
+    C --> C1[Host Operating System]
+    C --> C2[Cluster Security]
+    C --> C3[Application Security]
+```
 
-    B3 --> B3c[Application Security Best Practices]
-    B3c --> B3c1[Use Secrets, no hardcoded credentials]
-    B3c --> B3c2[RBAC]
-    B3c --> B3c3[Container Sandboxing]
-    B3c --> B3c4[Container Hardening: Reduce surface attack, run as user, readonly filesystem]
-    B3c --> B3c5[Vulnerability Scanning]
-    B3c --> B3c6[mTLS/Service Meshes]
+---
 
-    C[Complexity of Kubernetes]
-    C --> C1[Kubernetes combines many things]
-    C --> C2[Environment changes, security can't stay static]
-    C --> C3[Attackers have the advantage]
-    C3 --> C3a[Attackers decide the time]
-    C3 --> C3b[Attackers pick what to attack]
+## 5. Kubernetes Best Practices
+### Host Operating System
+```mermaid
+graph TD
+    BP1[Host Operating System]
+    BP1 --> BP1A[K8s nodes only for Kubernetes]
+    BP1 --> BP1B[Remove unused apps]
+    BP1 --> BP1C[Keep everything updated]
+    BP1 --> BP1D[Runtime tools like gVisor/seccomp]
+    BP1 --> BP1E[Find malicious processes]
+    BP1 --> BP1F[Restrict IAM/SSH access]
+```
+
+### Kubernetes Cluster Security
+```mermaid
+graph TD
+    BP2[Cluster Security]
+    BP2 --> BP2A[Secure and up-to-date components]
+    BP2 --> BP2B[Restrict external access]
+    BP2 --> BP2C[Authentication & Authorization]
+    BP2 --> BP2D[Admission Controllers: Node Restriction, OPA]
+    BP2 --> BP2E[Audit Logging & CIS Benchmarks]
+    BP2 --> BP2F[Etcd Security: Encrypt/rest/restrict access]
+```
+
+### Application Security
+```mermaid
+graph TD
+    BP3[Application Security]
+    BP3 --> BP3A[Use secrets, no hardcoded credentials]
+    BP3 --> BP3B[RBAC]
+    BP3 --> BP3C[Container sandboxing]
+    BP3 --> BP3D[Container hardening: Reduce attack surface, run as user]
+    BP3 --> BP3E[Vulnerability scanning]
+    BP3 --> BP3F[mTLS/Service meshes]
+```
+
+---
+
+## 6. Complexity of Kubernetes
+```mermaid
+graph TD
+    CK[Complexity of Kubernetes]
+    CK --> CK1[Combines many things]
+    CK --> CK2[Dynamic environments; security must adapt]
+    CK --> CK3[Attackers have the advantage]
+    CK3 --> CK3A[Decide time of attack]
+    CK3 --> CK3B[Pick what to attack]
+```
