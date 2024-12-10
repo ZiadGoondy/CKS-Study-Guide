@@ -1,3 +1,4 @@
+```mermaid
 graph TD
     A[CKS Content] --> A1[Cluster Setup - 10%]
     A --> A2[Cluster Hardening - 15%]
