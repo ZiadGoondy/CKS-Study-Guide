@@ -86,10 +86,10 @@ graph TD
 
 ---
 
-## 6. Complexity of Kubernetes
+## 6. Complexity of Kubernetes Security
 ```mermaid
 graph TD
-    CK[Complexity of Kubernetes]
+    CK[Complexity of Kubernetes security]
     CK --> CK1[Combines many things]
     CK --> CK2[Dynamic environments; security must adapt]
     CK --> CK3[Attackers have the advantage]
